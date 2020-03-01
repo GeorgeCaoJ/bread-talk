@@ -1,13 +1,10 @@
 ---
 layout: post 
 title: 类成员函数用作回调函数的方式
-categorys:
-- c++
-tags:
-- cpp
-- c++
 description: 类内函数在使用回调时的注意点
-date: 2018-8-13 12:34:56
+tags:
+- C++
+date: 2018-08-13 12:34:56
 comments: true
 ---
 

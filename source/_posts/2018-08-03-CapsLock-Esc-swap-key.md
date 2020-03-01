@@ -1,7 +1,13 @@
 ---
-title: CapsLock和Esc键位互换方法
-date: 2018-08-03 11:42:29
+layout: post 
+title: CapsLock和Esc按键互换方法
+description: VIM输入模式下，ESC键位太远，通过键位互换解决
 tags:
+- windows
+- tool
+- vim
+date: 2018-08-03 12:34:56
+comments: true
 ---
 
 
