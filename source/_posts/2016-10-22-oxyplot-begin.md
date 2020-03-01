@@ -11,7 +11,7 @@ comments: true
 ---
 
 ## oxyplot简介
-![oxyplot]({{site.baseurl}}/img/oxyplot/oxyplot.png)
+![oxyplot](/img/oxyplot/oxyplot.png)
 
 [oxyplot](http://www.oxyplot.org/)是一个跨平台的作图库，其核心库可以移植到多种平台使用，定制化的控件可以在WPF, Windows 8, Windows Phone, Windows Phone Silverlight, Windows Forms, Silverlight, GTK#, Xwt, Xamarin.iOS, Xamarin.Android, Xamarin.Forms and Xamarin.Mac使用。[oxyplot文档](http://docs.oxyplot.org/en/latest/)目前还在建设，在我使用中没有查阅到有帮助的信息，只能从[oxylot的github](https://github.com/oxyplot/oxyplot)上clone，然后学习**Source/Examples**给的实例。
 
@@ -24,18 +24,18 @@ comments: true
 
 2.在解决方案窗口又击**引用**，选择**NuGet**（如果vstudio没有自带，需额外安装）
 
-![oxyplot_1]({{site.baseurl}}/img/oxyplot/oxyplot_1.jpg)
-![oxyplot_2]({{site.baseurl}}/img/oxyplot/oxyplot_2.jpg)
+![oxyplot_1](/img/oxyplot/oxyplot_1.jpg)
+![oxyplot_2](/img/oxyplot/oxyplot_2.jpg)
 
 3.在NuGet中搜索oxplot,选择oxyplot.WinForm安装，安装成后，编译生成
 
-![oxyplot_3]({{site.baseurl}}/img/oxyplot/oxyplot_3.jpg)
+![oxyplot_3](/img/oxyplot/oxyplot_3.jpg)
 
 4.调出toolbox工具栏，右击选择其他项，浏览文件夹到debug下，在生成文件文件中添加**oxyplot.WinForm.dll**，确定后会将oxyplot的**plotview**控件添加进入工具栏。
 
-![oxyplot_4]({{site.baseurl}}/img/oxyplot/oxyplot_4.jpg)
-![oxyplot_5]({{site.baseurl}}/img/oxyplot/oxyplot_5.jpg)
-![oxyplot_5]({{site.baseurl}}/img/oxyplot/oxyplot_6.jpg)
+![oxyplot_4](/img/oxyplot/oxyplot_4.jpg)
+![oxyplot_5](/img/oxyplot/oxyplot_5.jpg)
+![oxyplot_5](/img/oxyplot/oxyplot_6.jpg)
 
 ## winform简单的示例
 
@@ -189,8 +189,8 @@ plotModel.Series.Add(stairStepseries)
 
 用oxyplot画出的正弦曲线
 
-![sin]({{site.baseurl}}/img/oxyplot/sin.jpg)
+![sin](/img/oxyplot/sin.jpg)
 
 使用oxyplot的`StairStepSeries`得到的采样阶梯曲线
 
-![stairstep]({{site.baseurl}}/img/oxyplot/stairstep.jpg)
+![stairstep](/img/oxyplot/stairstep.jpg)

@@ -14,7 +14,9 @@ comments: true
 
 ### 进行POST请求
 
->$ curl -H "http-header: value" --data @body.json http://ip:port/url
+```shell
+$ curl -H "http-header: value" --data @body.json http://ip:port/url
+```
 
 `-H`表示header字段，`--date`表示body字段，body可以单独写成json格式如：
 ```json
