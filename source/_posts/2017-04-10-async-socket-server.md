@@ -3,7 +3,7 @@ layout: post
 title: 网络编程实践-异步通信服务器中踩的一些坑
 description: 编写服务器socket软件时遇到了一些问题
 tags:
-- C#
+- CSharp
 - socket
 - TCP/IP
 date: 2017-04-10 12:34:56

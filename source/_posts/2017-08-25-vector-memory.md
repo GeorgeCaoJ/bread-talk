@@ -3,7 +3,7 @@ layout: post
 title: vector空间配置和栈空间返回引用的困惑和解答
 description: 想明白了STL空间配置器和栈空间的一点迷惑
 tags:
-- C++
+- CPP
 - STL
 date: 2017-08-25 12:34:56
 comments: true

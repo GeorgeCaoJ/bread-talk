@@ -3,7 +3,7 @@ layout: post
 title: C#中关于Task、Task.ContinueWith()和Task.WaitAll()的用法
 description: 简单使用Task类的学习记录
 tags:
-- C#
+- CSharp
 date: 2016-11-01 12:34:56
 comments: true
 ---

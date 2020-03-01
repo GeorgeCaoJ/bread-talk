@@ -3,7 +3,7 @@ layout: page
 title: oxyplot的初次使用
 description: oxyplot的控件添加方法和基本使用
 tags:
-- C#
+- CSharp
 - oxyplot
 - WinForms
 date: 2016-10-22 12:34:56

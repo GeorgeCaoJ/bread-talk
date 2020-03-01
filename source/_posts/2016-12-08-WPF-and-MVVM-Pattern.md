@@ -3,7 +3,7 @@ layout: post
 title: 学习WPF和MVVM的一些资源
 description: 从winform过渡到wpf中的一些阵痛
 tags:
-- C#
+- CSharp
 - WPF
 - MVVM
 date: 2016-12-08 12:34:56

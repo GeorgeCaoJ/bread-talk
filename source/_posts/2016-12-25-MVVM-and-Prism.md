@@ -3,7 +3,7 @@ layout: post
 title: 学习WPF和MVVM一段时间的总结
 description: 学习MVVM设计模式后第一次用于生产
 tags:
-- C#
+- CSharp
 - WPF
 - MVVM
 date: 2016-12-25 12:34:56

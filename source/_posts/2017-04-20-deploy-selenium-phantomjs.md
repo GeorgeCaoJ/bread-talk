@@ -5,8 +5,6 @@ description: 将脚本部署到linux服务器涉及的操作和问题
 tags:
 - python
 - linux
-- selenuim 
-- phantomJS
 date: 2017-04-20 12:34:56
 comments: true
 ---

@@ -3,7 +3,7 @@ layout: post
 title: 使用VisualStudio打包应用程序
 description: 通过VS官方工具包将开发的程序打包成安装程序的简单步骤
 tags:
-- C#
+- CSharp
 - VStudio
 date: 2016-11-30 12:34:56
 comments: true
