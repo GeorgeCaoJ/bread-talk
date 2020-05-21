@@ -74,16 +74,16 @@ userlist_deny=NO # 启动白名单文件
 
 ## IDEA中配置FTP服务器
 进入IDEA的`Tools->Deplyment->configuration`菜单
-![deploy1](../img/idea/deploy1.jpg)
+![deploy1](/img/idea/deploy1.jpg)
 
 配置FTP服务器信息,types选择`FTP`
-![ftp](../img/idea/ftp.jpg)
+![ftp](/img/idea/ftp.jpg)
 
 FTP配置中增加项目与服务器目录路径的映射
-![ftp-mapping](../img/idea/ftp-mapping.jpg)
+![ftp-mapping](/img/idea/ftp-mapping.jpg)
 
 配置完成后即可将当前项目的任何文件通过IDEA自带的工具同步到服务器，特别是本地打包的jar包，直接部署到服务器
-![deploy-jar](../img/idea/deploy-jar.jpg)
+![deploy-jar](/img/idea/deploy-jar.jpg)
 IDEA日志显示上传成功
 ```sh
 [2020/5/21 16:44] Upload to 105-ftp
@@ -95,14 +95,14 @@ IDEA日志显示上传成功
 ## IDEA通过SSH访问服务器
 有两种方式添加SSH连接信息
 1. 通过菜单栏`Tools->Start SSH Session...->Edit credentials`
-![ssh1](../img/idea/SSH1.jpg)
+![ssh1](/img/idea/SSH1.jpg)
 
 2.与FTP服务器配置相同，进入IDEA的`Tools->Deplyment->configuration`菜单, types选择`SFTP`,配置SSH的连接信息
 
-![ssh2](../img/idea/ssh-connection.jpg)
+![ssh2](/img/idea/ssh-connection.jpg)
 
 配置完成即可通过`Tools->Start SSH Session...`选择对应的SSH连接，访问服务器，然后通过命令行启动jar服务
-![start service](../img/idea/start-service.jpg)
+![start service](/img/idea/start-service.jpg)
 
 ## 总结
 直接通过IDEA自带工具，实现远程部署和服务器控制，避免切换外部工具，如xshell，可加快调试部署效率。
