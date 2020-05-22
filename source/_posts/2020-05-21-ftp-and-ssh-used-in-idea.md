@@ -8,6 +8,8 @@ tags:
 - centos
 - idea
 - ssh
+- java
+- debug
 date: 2020-5-21 15:00:27
 comments: true
 ---
@@ -17,7 +19,7 @@ comments: true
 * CI/CD服务平台，直接构建并部署到测试环境
 * maven工具实现远程部署
 * 通过FTP和SSH方式换包重启进行更新部署
-* [JRebel](https://www.jrebel.com/products/jrebel)三方辅助工具实现代码热部署
+* [JRebel](https://www.jrebel.com/products/jrebel)三方辅助工具实现代码热部署,详情见我其他[博客](https://bread-whisper.now.sh/2020/05/22/debug-with-jrebel/)
 
 本文主要介绍使用IDEA自带的工具，通过FTP和SSH方式换包重启进行更新部署,及时修复测试环境bug，提高联调测试效率。
 
