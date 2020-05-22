@@ -63,12 +63,14 @@ JRebel实现远程热部署的方式对原有代码没有侵入性，只需要�
 - libjrebel64.so
 - target
     - demo-0.0.1-SNAPSHOT.jar
-```  
+```
+
 部署成功后，用以下命令加载插件并启动服务,`remoting_port`参数用于指定远程JRebel调试端口，来同步本地IDE的class变更信息，远程JRebel接收后即可进行代码的热部署。若同时部署多个服务，需要指定不同的端口，避免端口冲突
 ```sh
  java -agentpath:/home/george/jrebel/libjrebel64.so -Drebel.remoting_plugin=true -Drebel.remoting_port=10340 -jar /home/george/jrebel/target/demo-0.0.1-SNAPSHOT.jar
 
 ```
+
 服务启动后，可见其日志如下为成功启动
 ```sh
 [george@centos target]$ java -agentpath:/home/george/jrebel/libjrebel64.so -Drebel.remoting_plugin=true -Drebel.remoting_port=10340 -jar /home/george/jrebel/target/demo-0.0.1-SNAPSHOT.jar
@@ -107,6 +109,7 @@ INFO: Created user preferences directory.
 
 .....
 ```
+
 #### 配置本地IDEA JRebel服务信息实现本地与远程的通信
 
 ![remote-server](/img/jrebel/remote-server.jpg)
