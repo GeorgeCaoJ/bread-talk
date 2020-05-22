@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IDEA中JRebel代码调试插件的使用方法及其原理初探
+title: IDEA中JRebel代码调试插件的配置使用方法
 description: 使用JRebel插件工具实现代码的本地/远程热部署,调过构建部署重启的步骤，可大大加快开发调试的效率
 tags:
 - JRebel
