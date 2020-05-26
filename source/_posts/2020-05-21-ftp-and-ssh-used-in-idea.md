@@ -104,7 +104,9 @@ IDEA日志显示上传成功
 ![ssh2](/img/idea/ssh-connection.jpg)
 
 配置完成即可通过`Tools->Start SSH Session...`选择对应的SSH连接，访问服务器，然后通过命令行启动jar服务
-![start service](/img/idea/start-service.jpg)
+![start service](/img/idea/start-service.jpg)  
+也可以查看远程服务器的文件目录结构，通过Tools->Deployment->Browse Remote Host查看
+![remote_host_dir_list](/img/idea/remote_host_dir_list.jpg)
 
 ## 总结
 直接通过IDEA自带工具，实现远程部署和服务器控制，避免切换外部工具，如xshell，可加快调试部署效率。
