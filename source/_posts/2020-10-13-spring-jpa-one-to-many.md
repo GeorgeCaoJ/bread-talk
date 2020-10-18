@@ -1,6 +1,6 @@
 ---
 layout: post
-title: @OneToMany和ManyToOne双向关联时，FetchType开关的意外行为影响
+title: OneToMany和ManyToOne双向关联时，FetchType开关的意外行为影响
 description: 使用spring data jpa遇到的坑
 tags:
 - JPA
@@ -23,7 +23,7 @@ comments: true
 
 ### ER图
 
-![ER](../img/java/ER_post_comment.png)
+![ER](/img/java/ER_post_comment.png)
 
 定义这两个数据库映射
 
