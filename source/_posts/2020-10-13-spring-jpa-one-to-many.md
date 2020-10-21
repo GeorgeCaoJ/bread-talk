@@ -40,7 +40,7 @@ public class Post{
     @Column(name = "title")
     private String title;
 
-		@OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "post_comment_ref",
             joinColumns = @JoinColumn(name = "post_id"),
@@ -88,7 +88,7 @@ public class Comment{
     @Column(name = "content")
     private String content;
 
-		@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(
             name = "post_comment_ref",
             joinColumns = @JoinColumn(name = "comment_id"),
