@@ -37,7 +37,7 @@ comments: true
 
 ## 分享我常用的APP屏蔽规则(持续更新)
 以下列举的是iPhone客户端软件规则
-|app|类型|地址|
-|--|--|--|
-|网易云音乐|domain|`iadmusicmat.music.126.com`|
-|QQ音乐|domain|`pgdt.gtimg.cn`|
+| app | 类型 | 地址 |
+| - | - | - |
+| 网易云音乐 | domain | `iadmusicmat.music.126.com` |
+| QQ音乐 | domain | `pgdt.gtimg.cn` |
