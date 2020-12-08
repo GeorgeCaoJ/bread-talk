@@ -7,7 +7,7 @@ tags:
 - NAT
 date: 2020-11-30 15:39:00
 comments: true
---
+---
 
 1. 虚拟机网络选择使用NAT模式
 ![vm-nat1.jpg](/img/tools/vm-nat1.jpg)

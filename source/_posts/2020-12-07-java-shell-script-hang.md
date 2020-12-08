@@ -5,6 +5,7 @@ description: 记录java中调用shell脚本或线程挂起的原因和解决方�
 tags:
 - java
 - shell
+- linux
 date: 2020-12-07 17:36:21
 comments: true
 ---
@@ -30,9 +31,11 @@ try{
 ```
 ## 调用问题及原因
 1. 脚本调用无效
+   
 [原因](https://stackoverflow.com/questions/25647806/running-shell-script-from-external-directory-no-such-file-or-directory):脚本本身无运行权限，`ProcessBuilder.start()`需要通过`/bin/bash`来调用脚本
 
-2. 线程挂起不退出
+1. 线程挂起不退出  
+
 现象：接口无返回，线程未退出，通过`ps`命令查看到子进程命令行参数正确，但是进程常驻，挂起未退出
 ![img1](/img/java/java-run-shell-1.jpg)
 可以看到子进程的脚本中运行的程序停留在了`pipe_w`状态，这里的w指wait，表明该进程在操作管道通信的时候发生了挂起
@@ -48,3 +51,6 @@ ProcessBuilder pb = new ProcessBuilder("/bin/bash", "myShellScript.sh", "myArg1"
 ```
 正常情况下，脚本中调用其他脚本，其标准IO会继承父进程的设置，但我实际测试中，脚本中也调用了其他人编写三方程序，其标准IO也需要重定向，否则依然会挂起，猜测可能是这个三方程序的IO未继承父进程的IO,需单独指定。
 ![img2](/img/java/java-run-shell-2.jpg)
+## 知识点补充
+`>/dev/null 2>&1`  
+这里`/dev/null`完整表述是`1>/dev/null`指将标准输出（stdout-1）重定向，`2>&1`指将标准错误（stderr-2）重定向到标准输出，因此这个表达式最后其实是将标准输出和标准错误都重定向到一个特殊的文件,这个文件的作用是接收输入数据并将其丢弃，相当于垃圾桶。
