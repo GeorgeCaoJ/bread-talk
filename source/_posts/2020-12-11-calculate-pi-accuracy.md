@@ -8,6 +8,8 @@ tags:
 date: 2020-12-11 16:19:21
 comments: true
 ---
+
+
 ## 题目
 > Given that Pi can be estimated using the function 4 * (1 – 1/3 + 1/5 – 1/7 + …) with more terms giving greater accuracy, write a function that calculates Pi to an accuracy of 5 decimal places.  
 翻译：给定pi=4 * (1 – 1/3 + 1/5 – 1/7 + …)的计算公式，项越多越精确，写一个方法来计算得到精度为小数点后5位的值
