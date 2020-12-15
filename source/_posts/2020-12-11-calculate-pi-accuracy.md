@@ -34,14 +34,14 @@ def calculatePi(x):
 ### 目标x的值
 
 通过无穷级数累计就和即可得到pi,但pi是一个无理数，不可能有一个精确的值，计算只能无限逼近理想值，这题的关键就是小数位后5位精度，从判断这个精度如何达到的角度切入,推导后直接能算出精度截止到小数点后5位时x的目标值
-![pi](/img/algorithm/pi/jpg)
+![pi](/img/algorithm/pi.jpg)
 得到x的目标值为200000，代入求和公式即可得到π的结果
 
 ```shell
 $ calculatePi(200000)
 3.141597653564762
 ```
-推导过程学习使用了下[LaTeX](https://www.cnblogs.com/nowgood/p/Latexstart.html)语法，简单好用。
+推导过程学习是在python jupyter notebook中使用了下[LaTeX](https://www.cnblogs.com/nowgood/p/Latexstart.html)语法，但hexo若要支持laTeX需要额外安装插件和配置。
 ```LaTeX
 $$
 \begin{align}
