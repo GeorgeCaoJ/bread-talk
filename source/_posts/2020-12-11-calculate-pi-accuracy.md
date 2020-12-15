@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [算法]-计算圆周率pi值，精确到小数点后5位
+title: 算法-计算圆周率pi值，精确到小数点后5位
 description: 说是算法题，但根本还是一道简单的数学题
 tags:
 - python
