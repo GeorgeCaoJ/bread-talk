@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 多台服务器通过docker部署consul集群
-description: docker部署使用docker compose方式
+description: 使用docker compose工具部署consul
 tags:
 - docker
 - consul
-date: 2020-12-23 16:19:21
+date: 2020-12-23 22:28:21
 comments: true
 ---
 
@@ -42,8 +42,8 @@ networks:
 ```
 ## 多台服务器consul集群
 多台服务consul集群时与在单台服务有许多地方需要注意：
-1. 每台服务器都需要暴露端口给对方，进行集群的必要通信和协商，其中8301和8302的tcp和udp都需要开放，
-2. 需要将本机的ip指定advertise
+1. 每台服务器都需要暴露端口给对方，进行集群的必要通信和协商，其中8301和8302的tcp和udp都需要开放  
+2. 需要将本机的ip指定advertise    
 以上两个条件不满足，可能会出现我遇到的`memberlist: Suspect <name> has failed, no acks received`[错误](https://github.com/hashicorp/consul/issues/953)  
 服务器1的ip：10.2.145.183的docker-compose.yml
 ```yml
