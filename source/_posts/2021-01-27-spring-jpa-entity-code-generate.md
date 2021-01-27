@@ -15,7 +15,7 @@ comments: true
 
 ## 工具和脚本
 IDEA自带了**Database Tools and SQL**数据库客户端插件，用于在IDEA中连接和管理数据库，该插件可以通过groovy脚本来快速生成POJO代码, 其自带的`Generate POJOs.groovy`即可生成数据库对象的POJO代码；改造这个脚本，即可实现生成JPA数据库对象实体代码的功能  
-Generate Database Entity.groovy脚本如下, 其中Getter和Setter方法使用了常用的lombok来生成：
+Generate Database Entity.groovy脚本如下：
 ```groovy
 import com.intellij.database.model.DasTable
 import com.intellij.database.util.Case
@@ -93,7 +93,7 @@ def calcFields(table) {
 
 def javaName(str, capitalize) {
   def nameArray = com.intellij.psi.codeStyle.NameUtil.splitNameIntoWords(str)
-  //省略无意义的
+  //省略数据库表名中无意义的单个字符
   def validNameArray = []
   nameArray.each(){
     if (it.length() > 1){
@@ -107,6 +107,51 @@ def javaName(str, capitalize) {
   capitalize || s.length() == 1? s : Case.LOWER.apply(s[0]) + s[1..-1]
 }
 ```
+上述脚本中，针对我的使用场景和数据库命名习惯，使用lombok来生成Getter和Setter方法。数据库命名上，我习使用C语言的命名方式，即第一个字符使用数据类型来命名，如int值的年龄字段命名为`i_age`,string类型的人名命名为`c_name`,因此我在脚本中省略了数据库表名中无意义的单个字符，已避免生成`iAge`,`iName`这样奇怪的命名。
 ## 使用方法
 将上述脚本放在`C:\Users\george\.IntelliJIdea2019.3\config\extensions\com.intellij.database\schema`文件中，与默认的`Generate POJOs.groovy`脚本在同一个目录，然后在**database**视图栏中选中要生成的表，右键选择执行脚本，选择目标包路径即可生成代码到指定的包
 ![script](/img/idea/script.jpg)
+demo数据表的DDL为:
+```sql
+CREATE TABLE `idea` (
+  `id` bigint NOT NULL,
+  `c_title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT ' 测试',
+  `c_content` varchar(5000) DEFAULT NULL,
+  `t_update_time` datetime DEFAULT NULL,
+  `t_create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+对应生成的`IdeaDO.java`为:
+```java
+package com.george.demo.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+
+@Setter
+@Getter
+@Entity
+@Table(name = "idea")
+public class IdeaDO {
+
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "c_title")
+    private String title;
+
+    @Column(name = "c_content")
+    private String content;
+
+    @Column(name = "t_update_time")
+    private java.sql.Timestamp updateTime;
+
+    @Column(name = "t_create_time")
+    private java.sql.Timestamp createTime;
+}
+```
