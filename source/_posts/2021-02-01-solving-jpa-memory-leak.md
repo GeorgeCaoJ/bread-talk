@@ -64,7 +64,7 @@ PS Old Generation
 
 47236 interned Strings occupying 4971728 bytes.
 ```
-发现新生代和老年代的内存都占满了，程序存在内存泄漏问题；使用`jmap`查看占用内存最大的20个类，
+发现新生代和老年代的内存都占满了，程序存在内存泄漏问题；使用`jmap`查看占用内存最大的20个类
 ```shell
 jmap -histo:live 112968|head -20
 
@@ -110,11 +110,11 @@ jmap -histo:live 112968|head -20
 ```sql
 select i from oe.workflow.entity.WorkflowBinding i where i.processId in (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22, ?23, ?24)
 ```
-### 问题原因
+## 问题原因
 首先通过代码走读调用该sql的相关业务，未能发现有任何泄漏的风险，然后通过google搜索问题，发现这是个已知问题，问题原因可见[stackflow的解答](https://stackoverflow.com/questions/31557076/spring-hibernate-query-plan-cache-memory-usage)。  
 原因是hibernate会缓存生成的sql语句，这样的机制在通常场景下可以提高查询效率，但是当涉及in语句时，可能会带来问题；由于in语句中参数列表的个数是不确定的，所以缓存对象会随着in语句参数个数的不同而增加，例如in6000个参数与in60001个参数是两个不同的sql，因此会缓存两次。
-### 解决方法
-#### Hibernate版本小于5.3.0 
+## 解决方法
+### Hibernate版本小于5.3.0 
 通过配置文件减小`QueryPlanCache`内部缓存的大小
 ```yaml
 spring:
@@ -125,7 +125,7 @@ spring:
           plan_cache_max_size: 64
           plan_parameter_metadata_max_size: 32
 ```
-#### Hibernate版本大于等于5.3.0
+### Hibernate版本大于等于5.3.0
 hibernate对该问题进行了优化，将in语句参数的个数按log2来划分区间，如参数个数为5,6,7的语句使用参数个数为8的in语句，复用执行过程，减少缓存数量。通过以下配置来使用该特性
 ```yaml
 spring:
