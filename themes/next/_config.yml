@@ -1048,3 +1048,5 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+  
+fancybox: true
