@@ -1,6 +1,7 @@
 ---
 layout: post
 title: [知识点速记]-BeanFactory和FactoryBean的区别
+description: 积累spring源码知识点
 tags:
 - java
 - spring
@@ -10,7 +11,6 @@ date: 2021-3-1 15:15:45
 comments: true
 ---
 
-## 
 ### 总结
 命名上的区别：
 * BeanFactory以Factory结尾，是工厂类的接口，定义了spring中IOC容器获取其管理的Bean的规范接口。
