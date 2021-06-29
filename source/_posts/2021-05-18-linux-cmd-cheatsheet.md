@@ -18,3 +18,8 @@ CheatSheet系列参考自[国外大神博客](https://cheatsheet.dennyzhang.com/
 |---|---|---|
 |命令行别名|`alias ll='ls -l'`|[link](https://wangchujiang.com/linux-command/c/alias.html)|
 |文件磁盘占用递增排序|`du -sh ./* \| sort -h`|[link](https://wangchujiang.com/linux-command/c/du.html)|
+
+## 微服务 
+|名称|命令|更多信息|
+|---|---|---|
+|consul主动踢出服务|`http://{consulHost}:{consulPort}/v1/agent/service/deregister/{serviceId}`||
