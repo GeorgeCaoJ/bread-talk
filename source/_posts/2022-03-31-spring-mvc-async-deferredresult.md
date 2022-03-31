@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Spring MVC异步响应之DeferredResult详解 
-description: 源码解读DeferredResult机制
 tags:
 - java
 - async
@@ -18,7 +17,7 @@ comments: true
 异步流程图如下：
 ![async](/img/java/mvc_async.png)
 以上流程图来源于[博客](https://www.cnblogs.com/guogangj/p/5457959.html)
-
+<!-- more --> 
 ## 使用DeferredResult完成异步响应
 Spring 3.2开始引入了[DeferredResult](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/request/async/DeferredResult.html)类方便开发者完成异步响应，开发者只需要几个步骤即可完成异步响应：
 1. 在controller中声明DeferredResult,标识此请求是异步模式，当前线程退出时不能提交响应
