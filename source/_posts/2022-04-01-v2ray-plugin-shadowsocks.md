@@ -16,7 +16,8 @@ comments: true
 ## 技术原理
 > 原始的基于Websocket的数据传输，特征非常明显：有大量数据传递是在Websocket协议包里。    
 > 使用HTTP协议的数据传输：第一个包是HTTP协议包，后面的数据传递都是普通的TCP包。    
-流量混淆伪装成HTTP：Websocket协议只用来协商必要的内容同步信息，真实的数据传递都是用普通的TCP包（看起来像是http协议在传递数据）
+流量混淆伪装成HTTP：Websocket协议只用来协商必要的内容同步信息，真实的数据传递都是用普通的TCP包（看起来像是http协议在传递数据）  
+
 抓包查看到websocket协议的协商过程
 ```http
 #----------------------------------REQUEST--------------------------------#
@@ -42,7 +43,7 @@ Sec-WebSocket-Accept: iQCxTMLlPjRMTJN36aAZ/IthOTE=
 ```
 
 ## 部署架构
-![v2ray-plugin](/img/tools/v2ray-plugin.png)
+![流量混淆流程图](/img/tools/v2ray-plugin.png)
 在原有ss-local和ss-server之间，通过插件进行流量混淆，混淆的动作是在obfs-local和obfs-server之间代理的，对于使用方是无感知的。  
 通过抓包可以看到，obfs-local与obfs-server之间是先通过websocket形式
 <!-- more -->
