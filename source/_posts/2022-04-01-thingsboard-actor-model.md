@@ -5,7 +5,7 @@ tags:
 - ThingsBoard
 - distributed system
 - IoT
-date: 2022-04-01 10:00:00
+date: 2022-04-01 21:00:00
 comments: true
 ---
 ## 什么是Actor模型
