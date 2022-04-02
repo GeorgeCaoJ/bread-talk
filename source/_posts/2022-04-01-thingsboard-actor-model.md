@@ -39,7 +39,13 @@ Rule Node Actor: 规则节点actor，负责规则引擎中某个逻辑节点
 ![Actor层级结构](/img/java/tb_actor_brain.png)
 
 ## ThingsBoard的规则引擎如何运行
-这里我重点研究下ThingsBoard的规则引擎，它是如何执行运作的。 
+这里我重点研究下ThingsBoard的规则引擎，它是如何执行运作的。   
+![简单示例](/img/java/tb_rule_demo.png)
+以上述简单的温度规则示例，规则引擎的逻辑可以是串行和并行的，取决于用户业务需求，因此，规则引擎执行时也需要满足并发执行场景。  
+以Actor模型的思维思考规则引擎：上述就是一个RuleChanActor对应一个规则链；这个规则链产生了多个RuleChainNode，它们各自(包括RuleChain)都有一个**mailbox**,每个节点执行的触发条件便是邮箱里有未读的消息，一旦**poll**轮询到了未读消息，就可以对消息进行处理，这时便会进入actor内部的逻辑，而且未读消息的消费是串行的，处理完成上一条后才可继续消费下一条，这样就实现了线程池中的多个线程可以执行多个节点的运算，但是单个节点一定是单线程在执行，保证了线程安全。每个actor默认一定会有**Success执行成功**和**Failture失败**两种情况，对应了程序中方法正常结束和异常抛出的场景；当然也可以在成功的基础上发送其他标签（如True/false)信息。
+![规则引擎actor内部执行逻辑示意](/img/java/tb_rule_engine.png)
+规则的执行依赖于消息的传递，如上图。RuleChainActor保存了节点之间的路由信息，每次节点执行的结果发回RuleChanActor，由RuleChainActor作为中心路由进行分发和流转，RuleChainNode只负责节点自身的逻辑。  
+可以看到，Actor这样的异步模型比较依赖于消息的传递，因此ThindBoard在消息传递上使用了[Protocol Buffers](https://developers.google.com/protocol-buffers)优化序列化和反序列化，提升信息密度，提高执行效率。
 
 
 
