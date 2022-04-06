@@ -47,7 +47,7 @@ ps: 这里，我想到一个优化点，利用[COW(Copy On Write)](https://stack
 ## ThingsBoard规则引擎的集群策略
 ThngsBoard支持集群部署，规则引擎在集群中执行时步骤:
 1. 以消息对象（msg）的触发来源（Orginator）作为partition key，来确定在集群中哪个partition进行规则的执行
-2. 目标partition如果是当前示例，就直接发送给对应actor的mailBox，否则就通过消息队列中间件发送到其他集群
+2. 目标partition如果是当前示例，就直接发送给对应actor的mailBox，否则就通过消息队列中间件发送到其他集群  
 消息对象msg在一个规则链中进行转发传递时，触发来源originator是一般都是固定的；因此，除非是在规则执行期间修改了originator（比如从设备触发修改为平台租户触发），否则同一个规则链的规则节点都是在同一个实例进行执行。  
 具体看下代码是如何决定目标分区的：
 ```java
