@@ -3,6 +3,7 @@
 <head>
 <meta name="google-site-verification" content="ZFTsVL40UWrbZT121z_ayx765twm33fwEQJg5EVxsVM" />
 <meta name="baidu-site-verification" content="uDNiuHRP64" />
+<meta name="google-site-verification" content="2sejWnwsb5nFtiZHSJ-WdzumtIOf7U_3yOnyCRn94NQ" />
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
